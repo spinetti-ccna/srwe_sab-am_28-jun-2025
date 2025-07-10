@@ -32,13 +32,14 @@
             width: 100px;
             margin-bottom: 10px;
         }
-        h1 {
+        h1, h2, h3 {
             color: #1e3a8a;
+        }
+        h1 {
             font-size: 32px;
             font-weight: 700;
         }
         h2, h3 {
-            color: #1e3a8a;
             font-size: 18px;
             font-weight: 500;
             margin: 10px 0;
@@ -49,11 +50,13 @@
             background: #f8fafc;
             border-radius: 12px;
             overflow: hidden;
+            table-layout: fixed;
         }
         th, td {
-            padding: 12px 15px;
+            padding: 10px;
             font-size: 14px;
             border-bottom: 1px solid #e0e0e0;
+            text-align: center;
         }
         th {
             background: #1e3a8a;
@@ -61,30 +64,26 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            text-align: center;
         }
         td:first-child {
-            width: 50%;
-            font-weight: 500;
-            color: #333;
-            text-align: center;
+            width: 65%;
         }
         td:last-child {
-            width: 50%;
-            text-align: center;
+            width: 35%;
         }
         .thumbnail-container {
             position: relative;
             display: inline-block;
         }
         .thumbnail-container img {
-            width: 200px; /* Aumentado de 120px a 200px para mayor legibilidad */
+            width: 100%;
+            max-width: 500px;
             height: auto;
             border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .thumbnail-container img:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
         .thumbnail-container .play-button {
@@ -94,15 +93,19 @@
             transform: translate(-50%, -50%);
             background: rgba(30, 58, 138, 0.7);
             color: #fff;
-            padding: 10px 14px; /* Aumentado para proporción */
+            padding: 10px 14px;
             border-radius: 5px;
-            font-size: 14px; /* Aumentado de 12px para legibilidad */
+            font-size: 14px;
             text-transform: uppercase;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
         .thumbnail-container:hover .play-button {
             opacity: 1;
+        }
+        .qr-code img {
+            width: 150px;
+            height: auto;
         }
         tr:nth-child(even) {
             background: #f1f5f9;
@@ -140,11 +143,15 @@
                 font-size: 12px;
             }
             .thumbnail-container img {
-                width: 120px; /* Reducido a 120px en móviles para responsividad */
+                width: 100%;
+                max-width: 100%;
             }
             .thumbnail-container .play-button {
                 padding: 8px 12px;
-                font-size: 12px; /* Ajustado para móviles */
+                font-size: 12px;
+            }
+            .qr-code img {
+                width: 130px;
             }
         }
     </style>
@@ -158,34 +165,40 @@
         </div>
         <table>
             <tr>
-                <th>Clase</th>
                 <th>Vista Previa</th>
+                <th>Código QR</th>
             </tr>
             <tr>
-                <td>2da. Clase 🌐 CCNAv7 (SRWE) 🌐 SábAM 05/Julio/2025</td>
                 <td>
                     <a href="https://www.youtube.com/playlist?list=PLI7pydW0E02H8B83QdyjDPMI_qP_DVd-E" target="_blank" class="thumbnail-container">
                         <img src="https://img.youtube.com/vi/YPHYB5RoT5M/maxresdefault.jpg" alt="Vista previa">
                         <span class="play-button">Ver Clase</span>
                     </a>
                 </td>
-            </tr>
-            <tr>
-                <td>Demostración del Cálculo de Subnetting para obtener los Segmentos de Red IPv4</td>
-                <td>
-                    <a href="https://www.youtube.com/watch?v=0PPpExh50rE" target="_blank" class="thumbnail-container">
-                        <img src="https://img.youtube.com/vi/0PPpExh50rE/maxresdefault.jpg" alt="Vista previa">
-                        <span class="play-button">Ver Clase</span>
-                    </a>
+                <td class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://www.youtube.com/playlist?list=PLI7pydW0E02H8B83QdyjDPMI_qP_DVd-E&size=150x150" alt="QR Clase 2">
                 </td>
             </tr>
+      <tr>
+        <td>
+          <a href="https://www.youtube.com/watch?v=0PPpExh50rE" target="_blank" class="thumbnail-container">
+            <img src="https://img.youtube.com/vi/0PPpExh50rE/maxresdefault.jpg" alt="Subnetting SRWE">
+            <span class="play-button">Ver Clase</span>
+          </a>
+        </td>
+        <td class="qr">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://www.youtube.com/watch?v=0PPpExh50rE&size=150x150" alt="QR Subnetting">
+        </td>
+      </tr>
             <tr>
-                <td>1era. Clase 🌐 CCNAv7 (SRWE) 🌐 SábAM 28/Junio/2025</td>
                 <td>
                     <a href="https://www.youtube.com/playlist?list=PLI7pydW0E02Go-7VK9XUjL6Fe5ez6U00z" target="_blank" class="thumbnail-container">
                         <img src="https://img.youtube.com/vi/eprYqkmIVnE/maxresdefault.jpg" alt="Vista previa">
                         <span class="play-button">Ver Clase</span>
                     </a>
+                </td>
+                <td class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://www.youtube.com/playlist?list=PLI7pydW0E02Go-7VK9XUjL6Fe5ez6U00z&size=150x150" alt="QR Clase 1">
                 </td>
             </tr>
         </table>
