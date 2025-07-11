@@ -1,168 +1,251 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clases del Curso CCNAv7 (SRWE) - Sábados / 8:00 a.m. - 12:00 m. - Instructor Gustavo Spinetti</title>
-    <link rel="icon" href="https://www.netacad.com/" type="image/x-icon">
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #1e3a8a, #60a5fa);
-            margin: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #fff;
-        }
-        .container {
-            max-width: 900px;
-            width: 100%;
-            background: #fff;
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .header img {
-            width: 100px;
-            margin-bottom: 10px;
-        }
-        h1, h2, h3 {
-            color: #1e3a8a;
-        }
-        h1 {
-            font-size: 32px;
-            font-weight: 700;
-        }
-        h2, h3 {
-            font-size: 18px;
-            font-weight: 500;
-            margin: 10px 0;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #f8fafc;
-            border-radius: 12px;
-            overflow: hidden;
-            table-layout: fixed;
-        }
-        th, td {
-            padding: 10px;
-            font-size: 14px;
-            border-bottom: 1px solid #e0e0e0;
-            text-align: center;
-        }
-        th {
-            background: #1e3a8a;
-            color: #fff;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        td:first-child {
-            width: 65%;
-        }
-        td:last-child {
-            width: 35%;
-        }
-        .thumbnail-container {
-            position: relative;
-            display: inline-block;
-        }
-        .thumbnail-container img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .thumbnail-container img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-        .thumbnail-container .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(30, 58, 138, 0.7);
-            color: #fff;
-            padding: 10px 14px;
-            border-radius: 5px;
-            font-size: 14px;
-            text-transform: uppercase;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .thumbnail-container:hover .play-button {
-            opacity: 1;
-        }
-        .qr-code img {
-            width: 150px;
-            height: auto;
-        }
-        tr:nth-child(even) {
-            background: #f1f5f9;
-        }
-        tr:hover {
-            background: #e0e7ff;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 12px;
-            color: #666;
-        }
-        footer a {
-            color: #1e3a8a;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 600px) {
-            .container {
-                margin: 20px;
-                padding: 15px;
-            }
-            h1 {
-                font-size: 24px;
-            }
-            h2, h3 {
-                font-size: 16px;
-            }
-            th, td {
-                padding: 8px;
-                font-size: 12px;
-            }
-            .thumbnail-container img {
-                width: 100%;
-                max-width: 100%;
-            }
-            .thumbnail-container .play-button {
-                padding: 8px 12px;
-                font-size: 12px;
-            }
-            .qr-code img {
-                width: 130px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clases del Curso CCNAv7 (SRWE) - Sábados / 8:00 a.m. - 12:00 m. - Instructor Gustavo Spinetti</title>
+  <link rel="icon" href="https://www.netacad.com/" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #1e3a8a, #60a5fa);
+      margin: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header-content {
+      position: relative;
+      padding-top: 60px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 125px;
+      height: 125px;
+      border-radius: 100%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      position: absolute;
+    }
+
+    .logo-left {
+      top: 10px;
+      left: 10px;
+    }
+
+    .logo-right {
+      top: 10px;
+      right: 10px;
+    }
+
+    .header h1, .header h2, .header h3 {
+      margin: 0;
+      color: #1e3a8a;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .header h2, .header h3 {
+      font-size: 18px;
+      font-weight: 500;
+      margin: 10px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #f8fafc;
+      border-radius: 12px;
+      overflow: hidden;
+      table-layout: fixed;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      font-size: 14px;
+      border-bottom: 1px solid #e0e0e0;
+      text-align: center;
+    }
+
+    th {
+      background: #1e3a8a;
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    td:first-child {
+      width: 65%;
+    }
+
+    td:last-child {
+      width: 35%;
+    }
+
+    .thumbnail-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .thumbnail-container img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .thumbnail-container img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .thumbnail-container .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(30, 58, 138, 0.7);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 5px;
+      font-size: 14px;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .thumbnail-container:hover .play-button {
+      opacity: 1;
+    }
+
+    .qr-code img {
+      width: 150px;
+      height: auto;
+    }
+
+    tr:nth-child(even) {
+      background: #f1f5f9;
+    }
+
+    tr:hover {
+      background: #e0e7ff;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    footer a {
+      color: #1e3a8a;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      h2, h3 {
+        font-size: 16px;
+      }
+
+      th, td {
+        padding: 8px;
+        font-size: 12px;
+      }
+
+      .thumbnail-container img {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .thumbnail-container .play-button {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+
+      .qr-code img {
+        width: 130px;
+      }
+
+      .logo {
+        width: 90px;
+        height: 90px;
+      }
+
+      .logo-left {
+        top: 10px;
+        left: 10px;
+      }
+
+      .logo-right {
+        top: 10px;
+        right: 10px;
+      }
+
+      .header-content {
+        padding-top: 50px;
+      }
+
+      table {
+        margin-top: 30px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Clases del Curso de CCNAv7 (SRWE)</h1>
-            <h2>Horario: Sábados / 8:00 a.m. - 12:00 m.</h2>
-            <h3>Instructor Gustavo Spinetti</h3>
+  <div class="container">
+    <div class="header">
+      <div class="header-content">
+        <img src="imagenes/logo-circular.jpg" alt="Logo Izquierdo" class="logo logo-left">
+        <div class="header-text">
+          <h1>Clases del Curso de CCNAv7 (SRWE)</h1>
+          <h2>Horario: Sábados / 8:00 a.m. - 12:00 m.</h2>
+          <h3>Instructor Gustavo Spinetti</h3>
         </div>
+        <img src="imagenes/cisco-netacad.png" alt="Logo Derecho" class="logo logo-right">
+      </div>
+    </div>
+    
         <table>
             <tr>
                 <th>Vista Previa</th>
