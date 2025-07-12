@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Clases del Curso CCNAv7 (SRWE) - Sábados / 8:00 a.m. - 12:00 m. - Instructor Gustavo Spinetti</title>
+  <title>Clases del Curso CCNAv7 (SRWE)</title>
   <link rel="icon" href="https://www.netacad.com/" type="image/x-icon">
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: linear-gradient(135deg, #1e3a8a, #60a5fa);
-      margin: 40px;
+      margin: 0;
+      padding: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -24,54 +25,49 @@
       border-radius: 16px;
       padding: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      position: relative;
     }
 
     .header {
       text-align: center;
       margin-bottom: 20px;
+      position: relative;
     }
 
     .header-content {
-      position: relative;
-      padding-top: 60px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #e5e7eb;
     }
 
     .logo {
-      width: 125px;
-      height: 125px;
-      border-radius: 100%;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      position: absolute;
+      flex-shrink: 0;
+      margin: 10px;
     }
 
-    .logo-left {
-      top: 10px;
-      left: 10px;
+    .header-text {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
     }
 
-    .logo-right {
-      top: 10px;
-      right: 10px;
-    }
-
-    .header h1, .header h2, .header h3 {
+    .header-text h1 {
+      font-size: 28px;
       margin: 0;
       color: #1e3a8a;
     }
 
-    .header h1 {
-      font-size: 32px;
-      font-weight: 700;
-      margin-top: 0;
-    }
-
-    .header h2, .header h3 {
+    .header-text h2, .header-text h3 {
+      margin: 8px 0;
       font-size: 18px;
-      font-weight: 500;
-      margin: 10px 0;
+      color: #1e3a8a;
     }
 
     table {
@@ -80,12 +76,11 @@
       background: #f8fafc;
       border-radius: 12px;
       overflow: hidden;
-      table-layout: fixed;
       margin-top: 20px;
     }
 
     th, td {
-      padding: 10px;
+      padding: 12px;
       font-size: 14px;
       border-bottom: 1px solid #e0e0e0;
       text-align: center;
@@ -94,7 +89,6 @@
     th {
       background: #1e3a8a;
       color: #fff;
-      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -125,7 +119,7 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
-    .thumbnail-container .play-button {
+    .play-button {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -135,7 +129,6 @@
       padding: 10px 14px;
       border-radius: 5px;
       font-size: 14px;
-      text-transform: uppercase;
       opacity: 0;
       transition: opacity 0.3s ease;
     }
@@ -174,37 +167,11 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 600px) {
-      .container {
-        margin: 20px;
-        padding: 15px;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      h2, h3 {
-        font-size: 16px;
-      }
-
-      th, td {
-        padding: 8px;
-        font-size: 12px;
-      }
-
-      .thumbnail-container img {
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .thumbnail-container .play-button {
-        padding: 8px 12px;
-        font-size: 12px;
-      }
-
-      .qr-code img {
-        width: 130px;
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        align-items: center;
       }
 
       .logo {
@@ -212,22 +179,31 @@
         height: 90px;
       }
 
-      .logo-left {
-        top: 10px;
-        left: 10px;
+      .header-text h1 {
+        font-size: 22px;
       }
 
-      .logo-right {
-        top: 10px;
-        right: 10px;
+      .header-text h2, .header-text h3 {
+        font-size: 16px;
       }
 
-      .header-content {
-        padding-top: 50px;
+      th, td {
+        font-size: 12px;
+        padding: 8px;
       }
 
-      table {
-        margin-top: 30px;
+      .thumbnail-container img {
+        max-width: 100%;
+      }
+
+      .play-button {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+
+      .qr-code img,
+      .qr img {
+        width: 80px;
       }
     }
   </style>
@@ -236,32 +212,32 @@
   <div class="container">
     <div class="header">
       <div class="header-content">
-        <img src="imagenes/logo-circular.jpg" alt="Logo Izquierdo" class="logo logo-left">
+        <img src="imagenes/logo-circular.jpg" alt="Logo Izquierdo" class="logo">
         <div class="header-text">
           <h1>Clases del Curso de CCNAv7 (SRWE)</h1>
           <h2>Horario: Sábados / 8:00 a.m. - 12:00 m.</h2>
           <h3>Instructor Gustavo Spinetti</h3>
         </div>
-        <img src="imagenes/cisco-netacad.png" alt="Logo Derecho" class="logo logo-right">
+        <img src="imagenes/cisco-netacad.png" alt="Logo Derecho" class="logo">
       </div>
     </div>
-    
-        <table>
-            <tr>
-                <th>Vista Previa</th>
-                <th>Código QR</th>
-            </tr>
-            <tr>
-                <td>
-                    <a href="https://www.youtube.com/playlist?list=PLI7pydW0E02H8B83QdyjDPMI_qP_DVd-E" target="_blank" class="thumbnail-container">
-                        <img src="https://img.youtube.com/vi/YPHYB5RoT5M/maxresdefault.jpg" alt="Vista previa">
-                        <span class="play-button">Ver Clase</span>
-                    </a>
-                </td>
-                <td class="qr-code">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://www.youtube.com/playlist?list=PLI7pydW0E02H8B83QdyjDPMI_qP_DVd-E&size=150x150" alt="QR Clase 2">
-                </td>
-            </tr>
+
+    <table>
+      <tr>
+        <th>Vista Previa</th>
+        <th>Código QR</th>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://www.youtube.com/playlist?list=PLI7pydW0E02H8B83QdyjDPMI_qP_DVd-E" target="_blank" class="thumbnail-container">
+            <img src="https://img.youtube.com/vi/YPHYB5RoT5M/maxresdefault.jpg" alt="Vista previa">
+            <span class="play-button">Ver Clase</span>
+          </a>
+        </td>
+        <td class="qr-code">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://www.youtube.com/playlist?list=PLI7pydW0E02H8B83QdyjDPMI_qP_DVd-E&size=150x150" alt="QR Clase 2">
+        </td>
+      </tr>
       <tr>
         <td>
           <a href="https://www.youtube.com/watch?v=0PPpExh50rE" target="_blank" class="thumbnail-container">
@@ -269,25 +245,26 @@
             <span class="play-button">Ver Clase</span>
           </a>
         </td>
-        <td class="qr">
+        <td class="qr-code">
           <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://www.youtube.com/watch?v=0PPpExh50rE&size=150x150" alt="QR Subnetting">
         </td>
       </tr>
-            <tr>
-                <td>
-                    <a href="https://www.youtube.com/playlist?list=PLI7pydW0E02Go-7VK9XUjL6Fe5ez6U00z" target="_blank" class="thumbnail-container">
-                        <img src="https://img.youtube.com/vi/eprYqkmIVnE/maxresdefault.jpg" alt="Vista previa">
-                        <span class="play-button">Ver Clase</span>
-                    </a>
-                </td>
-                <td class="qr-code">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://www.youtube.com/playlist?list=PLI7pydW0E02Go-7VK9XUjL6Fe5ez6U00z&size=150x150" alt="QR Clase 1">
-                </td>
-            </tr>
-        </table>
-        <footer>
-            <p>Curso CCNAv7 impartido por el Instructor Gustavo Spinetti | Contacto: <a href="mailto:gustavoaspinettim@yahoo.es">gustavoaspinettim@yahoo.es</a></p>
-        </footer>
-    </div>
+      <tr>
+        <td>
+          <a href="https://www.youtube.com/playlist?list=PLI7pydW0E02Go-7VK9XUjL6Fe5ez6U00z" target="_blank" class="thumbnail-container">
+            <img src="https://img.youtube.com/vi/eprYqkmIVnE/maxresdefault.jpg" alt="Vista previa">
+            <span class="play-button">Ver Clase</span>
+          </a>
+        </td>
+        <td class="qr-code">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://www.youtube.com/playlist?list=PLI7pydW0E02Go-7VK9XUjL6Fe5ez6U00z&size=150x150" alt="QR Clase 1">
+        </td>
+      </tr>
+    </table>
+
+    <footer>
+      <p>Curso CCNAv7 impartido por el Instructor Gustavo Spinetti | Contacto: <a href="mailto:gustavoaspinettim@yahoo.es">gustavoaspinettim@yahoo.es</a></p>
+    </footer>
+  </div>
 </body>
 </html>
