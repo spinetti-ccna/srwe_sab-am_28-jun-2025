@@ -25,6 +25,7 @@
       border-radius: 16px;
       padding: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      color: #000;
     }
 
     .header {
@@ -84,6 +85,7 @@
       font-size: 14px;
       border-bottom: 1px solid #e0e0e0;
       text-align: center;
+      vertical-align: top;
     }
 
     th {
@@ -93,7 +95,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Ajuste ya que no hay columna QR */
     td:first-child {
       width: 100%;
     }
@@ -109,6 +110,7 @@
       height: auto;
       border-radius: 8px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
     }
 
     .thumbnail-container img:hover {
@@ -157,6 +159,16 @@
 
     footer a:hover {
       text-decoration: underline;
+    }
+
+    /* Nota para el video */
+    .nota-subnetting {
+      color: #8B0000; /* rojo oscuro */
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 6px;
+      max-width: 500px;
+      text-align: center;
     }
 
     /* Responsive */
@@ -213,16 +225,6 @@
       <tr>
         <th>Vista Previa</th>
       </tr>
-
-      <tr>
-        <td>
-          <a href="https://www.youtube.com/playlist?list=PLI7pydW0E02E-P0wTbb6FtWDtyBXaHsoz" target="_blank" class="thumbnail-container">
-            <img src="https://img.youtube.com/vi/Ohp5dt2VltA/maxresdefault.jpg" alt="Vista previa">
-            <span class="play-button">Ver Clase</span>
-          </a>
-        </td>
-      </tr>
-      
       <tr>
         <td>
           <a href="https://www.youtube.com/playlist?list=PLI7pydW0E02H8B83QdyjDPMI_qP_DVd-E" target="_blank" class="thumbnail-container">
@@ -232,14 +234,14 @@
         </td>
       </tr>
       <tr>
-        <td>
+        <td style="max-width: 500px; margin: auto;">
+          <div class="nota-subnetting">
+            Ejemplo para realizar la Actividad de Subnetting con el Programa de Python
+          </div>
           <a href="https://www.youtube.com/watch?v=0PPpExh50rE" target="_blank" class="thumbnail-container">
             <img src="https://img.youtube.com/vi/0PPpExh50rE/maxresdefault.jpg" alt="Subnetting SRWE">
             <span class="play-button">Ver Clase</span>
           </a>
-          <span style="color: #1e3a8a; font-weight: 600; max-width: 250px; font-size: 14px;">
-      Ejemplo para realizar la Actividad de Subnetting con el Programa de Python
-          </span>
         </td>
       </tr>
       <tr>
