@@ -93,12 +93,9 @@
       letter-spacing: 0.5px;
     }
 
+    /* Ajuste ya que no hay columna QR */
     td:first-child {
-      width: 65%;
-    }
-
-    td:last-child {
-      width: 35%;
+      width: 100%;
     }
 
     .thumbnail-container {
@@ -135,11 +132,6 @@
 
     .thumbnail-container:hover .play-button {
       opacity: 1;
-    }
-
-    .qr-code img {
-      width: 150px;
-      height: auto;
     }
 
     tr:nth-child(even) {
@@ -200,11 +192,6 @@
         padding: 8px 12px;
         font-size: 12px;
       }
-
-      .qr-code img,
-      .qr img {
-        width: 80px;
-      }
     }
   </style>
 </head>
@@ -225,7 +212,6 @@
     <table>
       <tr>
         <th>Vista Previa</th>
-        <th>Código QR</th>
       </tr>
       <tr>
         <td>
@@ -233,9 +219,6 @@
             <img src="https://img.youtube.com/vi/YPHYB5RoT5M/maxresdefault.jpg" alt="Vista previa">
             <span class="play-button">Ver Clase</span>
           </a>
-        </td>
-        <td class="qr-code">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://www.youtube.com/playlist?list=PLI7pydW0E02H8B83QdyjDPMI_qP_DVd-E&size=150x150" alt="QR Clase 2">
         </td>
       </tr>
       <tr>
@@ -245,9 +228,6 @@
             <span class="play-button">Ver Clase</span>
           </a>
         </td>
-        <td class="qr-code">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://www.youtube.com/watch?v=0PPpExh50rE&size=150x150" alt="QR Subnetting">
-        </td>
       </tr>
       <tr>
         <td>
@@ -255,9 +235,6 @@
             <img src="https://img.youtube.com/vi/eprYqkmIVnE/maxresdefault.jpg" alt="Vista previa">
             <span class="play-button">Ver Clase</span>
           </a>
-        </td>
-        <td class="qr-code">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://www.youtube.com/playlist?list=PLI7pydW0E02Go-7VK9XUjL6Fe5ez6U00z&size=150x150" alt="QR Clase 1">
         </td>
       </tr>
     </table>
